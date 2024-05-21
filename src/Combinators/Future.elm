@@ -1,5 +1,12 @@
 module Combinators.Future exposing (ckm, km, l, m, m2, u, y, θ, ω)
 
+{-|
+
+@docs ckm, km, l, m, m2, u, y, θ, ω
+
+-}
+
+
 {-| The Crossed Konstant Mocker combinator.
 
 Currently unable to implement due the M combinator requiring infinite type recursion.
@@ -7,8 +14,6 @@ Currently unable to implement due the M combinator requiring infinite type recur
 Implementable as `c (k m)` if that happens.
 
 -}
-
-
 ckm : Result String value
 ckm =
     Result.Err "Unimplementable until the M combinator is implemented."
