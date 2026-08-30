@@ -5,8 +5,18 @@ description: Publish to Elm registry and create GitHub release
 inputs:
   dry-run:
     description: Run in dry-run mode
-    required: true
+    required: false
     type: boolean
+    default: false
+  github-token:
+    description: GitHub token for publishing
+    required: true
+    type: string
+  path-to-elm:
+    description: Path to elm binary
+    required: false
+    type: string
+    default: ./node_modules/.bin/elm
 
 runs:
   using: composite
@@ -25,14 +35,14 @@ runs:
       id: elm-publish
       uses: dillonkearns/elm-publish-action@v2
       with:
-        github-token: ${{ inputs.dry-run == false && github.token || '' }}
-        path-to-elm: ./node_modules/.bin/elm
+        github-token: ${{ inputs.github-token }}
+        path-to-elm: ${{ inputs.path-to-elm }}
         dry-run: ${{ inputs.dry-run }}
 
     - name: Create GitHub Release
       if: inputs.dry-run == false && success()
       env:
-        GH_TOKEN: ${{ github.token }}
+        GH_TOKEN: ${{ inputs.github-token }}
       run: |
         VERSION=$(jq -r '.version' elm.json)
         gh release create "$VERSION" --generate-notes
