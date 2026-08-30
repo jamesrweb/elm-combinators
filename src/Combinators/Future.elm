@@ -1,17 +1,51 @@
-module Combinators.Future exposing (ckm, km, l, m, m2, u, y, θ, ω)
+module Combinators.Future exposing (bo, bt, ckm, km, l, m, m2, u, y)
 
 {-| Future combinators.
 
-@docs ckm, km, l, m, m2, u, y, θ, ω
+@docs bo, bt, ckm, km, l, m, m2, u, y
 
 -}
+
+
+{-| The Big Omega (Ω) combinator.
+
+Named 'bo' due to Elm's lack of Unicode support in function names.
+
+Currently unable to implement due the M combinator requiring infinite type recursion.
+
+Implementable as `Combinators.Future.m Combinators.Future.m` if that happens.
+
+    Combinators.Future.bo --> Err "Unimplementable until the M combinator is implemented."
+
+-}
+bo : Result String value
+bo =
+    Result.Err "Unimplementable until the M combinator is implemented."
+
+
+{-| The Big Theta (ϴ) combinator.
+
+Named 'bt' due to Elm's lack of Unicode support in function names.
+
+Currently unable to implement due the M combinator requiring infinite type recursion.
+
+Implementable as `Combinators.Future.y Combinators.o` if that happens.
+
+    Combinators.Future.bt --> Err "Unimplementable until the M combinator is implemented."
+
+-}
+bt : Result String value
+bt =
+    Result.Err "Unimplementable until the M combinator is implemented."
 
 
 {-| The Crossed Konstant Mocker combinator.
 
 Currently unable to implement due the M combinator requiring infinite type recursion.
 
-Implementable as `c (k m)` if that happens.
+Implementable as `Combinators.Future.c (Combinators.k Combinators.m)` if that happens.
+
+    Combinators.Future.ckm --> Err "Unimplementable until the M combinator is implemented."
 
 -}
 ckm : Result String value
@@ -23,7 +57,9 @@ ckm =
 
 Currently unable to implement due the M combinator requiring infinite type recursion.
 
-Implementable as `k m` if that happens.
+Implementable as `Combinators.k Combinators.Future.m` if that happens.
+
+    Combinators.Future.km --> Err "Unimplementable until the M combinator is implemented."
 
 -}
 km : Result String value
@@ -35,7 +71,9 @@ km =
 
 Currently unable to implement due the M combinator requiring infinite type recursion.
 
-Implementable as `c b m` if that ever becomes possible.
+Implementable as `Combinators.c Combinators.b Combinators.Future.m` if that ever becomes possible.
+
+    Combinators.Future.l --> Err "Unimplementable until the M combinator is implemented."
 
 -}
 l : Result String value
@@ -47,7 +85,9 @@ l =
 
 Currently unable to implement due to requiring infinite type recursion.
 
-Implementable as `s i i` if that ever becomes possible.
+Implementable as `Combinators.s Combinators.i Combinators.i` if that ever becomes possible.
+
+    Combinators.Future.m --> Err "Unimplemented currently."
 
 -}
 m : Result String value
@@ -59,7 +99,9 @@ m =
 
 Currently unable to implement due the M combinator requiring infinite type recursion.
 
-Implementable as `b m` if that happens.
+Implementable as `Combinators.b Combinators.Future.m` if that happens.
+
+    Combinators.Future.m2 --> Err "Unimplementable until the M combinator is implemented."
 
 -}
 m2 : Result String value
@@ -71,7 +113,9 @@ m2 =
 
 Currently unable to implement due the M combinator requiring infinite type recursion.
 
-Implementable as `l o` if that happens.
+Implementable as `Combinators.Future.l Combinators.o` if that happens.
+
+    Combinators.Future.u --> Err "Unimplementable until the M combinator is implemented."
 
 -}
 u : Result String value
@@ -83,33 +127,11 @@ u =
 
 Currently unable to implement due the M combinator requiring infinite type recursion.
 
-Implementable as `s l l` if that happens.
+Implementable as `Combinators.s Combinators.Future.l Combinators.Future.l` if that happens.
+
+    Combinators.Future.y --> Err "Unimplementable until the M combinator is implemented."
 
 -}
 y : Result String value
 y =
-    Result.Err "Unimplementable until the M combinator is implemented."
-
-
-{-| The ϴ (Big Theta) combinator.
-
-Currently unable to implement due the M combinator requiring infinite type recursion.
-
-Implementable as `y o` if that happens.
-
--}
-θ : Result String value
-θ =
-    Result.Err "Unimplementable until the M combinator is implemented."
-
-
-{-| The Ω (Big omega) combinator.
-
-Currently unable to implement due the M combinator requiring infinite type recursion.
-
-Implementable as `m m` if that happens.
-
--}
-ω : Result String value
-ω =
     Result.Err "Unimplementable until the M combinator is implemented."
