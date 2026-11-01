@@ -224,14 +224,14 @@ A combinatory logic library for Elm — the combinators (I, K, S and friends) ex
 
 ## Commands
 
-| Command | Purpose |
-|---|---|
-| `pnpm format` | Apply `elm-format` + Biome fixes |
-| `pnpm lint` | elm-verify-examples, elm-format validation, elm-review, Biome |
-| `pnpm test` | elm-verify-examples + `elm-test` suite |
-| `pnpm coverage` | Open elm-coverage report |
-| `pnpm documentation` | Open elm-doc-preview |
-| `pnpm install` | Install dependencies and run the `postinstall` Elm patch step |
+| Command              | Purpose                                                       |
+| -------------------- | ------------------------------------------------------------- |
+| `pnpm format`        | Apply `elm-format` + Biome fixes                              |
+| `pnpm lint`          | elm-verify-examples, elm-format validation, elm-review, Biome |
+| `pnpm test`          | elm-verify-examples + `elm-test` suite                        |
+| `pnpm coverage`      | Open elm-coverage report                                      |
+| `pnpm documentation` | Open elm-doc-preview                                          |
+| `pnpm install`       | Install dependencies and run the `postinstall` Elm patch step |
 
 ## CI/CD
 
